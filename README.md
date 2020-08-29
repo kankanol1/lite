@@ -1,37 +1,70 @@
-# lite
+# 欢迎使用 来编程少儿编程平台 开源版本：scratch-cn.lite
 
 #### 介绍
-一个轻量级的Scratch编程分享平台：注册登录、作品创作、作品管理、用户管理，作品点赞、收藏、分享。
+    scratch-cn.lite 是一个轻量级的Scratch编程分享平台
 
-#### 软件架构
-软件架构说明
+其主要功能模块：
+1. 注册登录；
+2. Scratch创作；
+3. 作品管理；
+4. 用户管理；
+5. 个人信息管理；
+6. 作品播放、点赞、收藏、分享。
+7. 其他扩展功能请参考官方网站：www.comecode.net
+
+#### 平台构架技术说明：
+1. 前端：Layui 框架；
+2. 后端：NodeJS + MySQL；
+3. 框架、结果简单清晰，整个版本极易上手；
+4. 支撑百万量级用户使用。
+
+#### 开发环境搭建所需要工具：
+VS Code、MySQL、NodeJS、Python、GIT。
+
+#### 源代码获取及运行
+1. git 版本源代码：git clone --depth=1 https://gitee.com/scratch-cn/lite.git
+2. 直接运行：npm start
+（开源版本中，已包含了Scratch所需的全部资源，无需依赖其他平台）
+（开源版本中，已包含了所需的node_modules包）
+（如万一发现有依赖包不全，请执行：npm install XXX（XXX为包名））
+
+#### 来编程项目开源版本目录说明：
+comecode.open.src               #来编程开源版本总目录
+├── build                       #Client端文件夹:网页、JS、CSS、IMG
+│   ├── css                     #CSS库
+│   ├── ejs                     #系统前端文件
+│   ├── img                     #IMG库
+│   ├── js                      #JS库
+│   ├── layui                   #LayUI模块：前端框架
+│   ├── scratch                 #scratch编辑器资源文件夹
+│ 
+├── data                        #所有用户上传的文件
+│   ├── material                #scratch作品的素材库
+│   ├── scratch_slt             #所有scratch项目的缩略图
+│   ├── upload_tmp              #所有上传文件的临时存放目录，该目录正常情况下应该为空，只为临时存放
+│   ├── user                    #用户头像文件夹
+│
+├── node_modules                #整个平台依赖的nodejs模块
+├── server                      #Server端文件夹
+│   ├── lib                     #Server端共用数据结构库
+│   ├── router_admin.js         #系统平台
+│   ├── router_my.js            #学习平台
+│   ├── router_scratch.js       #scratch模块
+│   ├── router_user.js          #用户登录、注册
+│
+├── app.js                      #平台主程序入口
+├── package.json                #平台包依赖文件
+├── process.json                #运行nodejs的配置
+├── README.md                   #平台说明文件
+├── www.comecode.net.sql        #数据库结构文件
+
+#### 注：
+1. 数据库结构文件中，已包含两个Scratch作品；
+2. 数据库结构文件中，已包含平台管理员账号；（账号：comecode，密码：111111)。
 
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 交流学习
+欢迎使用来编程少儿编程平台开源版本
+技术交流QQ群：115224892
+运行实例：www.comecode.net
+版权遵从MIT开源协议，学习交流及入群。如需商用，请联系版权所有者！

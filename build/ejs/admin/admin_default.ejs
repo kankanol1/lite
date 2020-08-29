@@ -1,0 +1,60 @@
+<!-- 各管理平台的欢迎页面 -->
+<link rel="stylesheet" href="/layui/css/layui.css">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+#top_box{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+#top_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+	bottom: 0;
+	
+    z-index: -10;
+    background-position: center;
+    background-size: cover;
+	background-attachment: fixed;
+	background-image: url(/img/web/sybj.jpg);
+}
+#top_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	z-index: -9;
+    opacity: .68;
+	background: #333333;
+}
+</style>
+
+<div id="top_box">
+	<div id="top_bg"></div>
+	<div id="top_overlay"></div>
+		
+	<div id='header-box'>
+		<a href="https://www.comecode.net" target="_blank">
+			<img id="avatar_img" src="/img/logo.png" >
+		</a>
+		<a href="https://www.comecode.net" target="_blank">
+			<h3 style="color:#FFF;font-size:x-large;margin:20px 0 40px 0">来编程---孩子们的编程平台</h3>
+		</a>
+
+		<div style="color:#FFF;margin:15px 0;">欢迎使用来编程少儿编程平台 开源版本</div>
+		<div style="color:#FFF;margin:15px 0;">技术交流QQ群：115224892</div>
+		<a href="https://www.comecode.net" target="_blank">
+			<div style="color:#F72;margin:15px 0;">来编程官网：https://www.comecode.net</div>
+		</a>
+		<div style="color:#F00;">©2020. LLC. All rights reserved.版权所有，开源版本仅用于学习交流。如需商用，请联系来编程官方</div>
+		<img id="avatar_img" src="/img/wx.jpg" style="margin-top: 10px;">
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/layui/layui.all.js"></script>
