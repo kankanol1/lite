@@ -1,9 +1,9 @@
-# 欢迎使用 来编程少儿编程平台 开源版本：scratch-cn.lite
+## 欢迎使用 来编程少儿编程平台 开源版本：scratch-cn.lite
 
 #### 介绍
     scratch-cn.lite 是一个轻量级的Scratch编程分享平台
 
-其主要功能模块：
+#### 其主要功能模块：
 1. 注册登录；
 2. Scratch创作；
 3. 作品管理；
@@ -23,13 +23,13 @@ VS Code、MySQL、NodeJS、Python、GIT。
 
 #### 源代码获取及运行
 1. git 版本源代码：git clone --depth=1 https://gitee.com/scratch-cn/lite.git
-2. 直接运行：npm start
+2. 在源代码目录下，直接运行：npm run start
 （开源版本中，已包含了Scratch所需的全部资源，无需依赖其他平台）
 （开源版本中，已包含了所需的node_modules包）
 （如万一发现有依赖包不全，请执行：npm install XXX（XXX为包名））
 
 #### 来编程项目开源版本目录说明：
-comecode.open.src               #来编程开源版本总目录
+comecode.open.src               #来编程开源版本总目录(下载默认目录为lite)
 ├── build                       #Client端文件夹:网页、JS、CSS、IMG
 │   ├── css                     #CSS库
 │   ├── ejs                     #系统前端文件
