@@ -35,7 +35,7 @@
 - 开源版本中，已包含了所需的node_modules包
 - 如万一发现有依赖包不全，请执行：npm install XXX（XXX为包名）
 
-### 来编程项目开源版本目录说明：
+### 目录说明：
 
 ```
 lite                            # scratch-cn.lite 目录
