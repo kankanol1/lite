@@ -1,5 +1,5 @@
-## scratch-cn.lite 在线编程平台
-===============
+# scratch-cn.lite 在线编程平台
+=============================================
 
 ### 介绍
     scratch-cn.lite 是一个轻量级的Scratch编程分享平台
@@ -20,7 +20,7 @@
 4. 轻松支撑百万量级用户。
 
 ### 开发环境搭建所需要工具（以Windows为例）：
-- git：用于下载源代码（源代码也可直接到下载:https://gitee.com/scratch-cn/lite/repository/archive/master.zip）
+- git：用于下载源代码（源代码也可直接下载:https://gitee.com/scratch-cn/lite/repository/archive/master.zip）
 - NodeJS：平台运行的服务器（下载地址：http://nodejs.cn/download/）
 - MySQL：用户信息、作品保存地（下载地址：https://dev.mysql.com/downloads/mysql/）
 - Python：编译源代码工具之一（下载地址：https://www.python.org/downloads/release）
@@ -28,6 +28,8 @@
 
 ### 源代码获取及运行
 1. git 版本源代码：git clone --depth=1 https://gitee.com/scratch-cn/lite.git
+- 源代码也可直接下载:https://gitee.com/scratch-cn/lite/repository/archive/master.zip
+
 2. 在源代码目录下，直接运行：npm run start
 - 开源版本中，已包含了Scratch所需的全部资源，无需依赖其他平台
 - 开源版本中，已包含了所需的node_modules包
@@ -65,8 +67,7 @@ lite                            # scratch-cn.lite 目录
 ├── README.md                   #平台说明文件
 ├── www.comecode.net.sql        #数据库结构文件
 ```
-
-### 注：
+#### 注：
 1. 数据库结构文件中，已包含两个Scratch作品；
 2. 数据库结构文件中，已包含平台管理员账号；（账号：comecode，密码：111111)。
 
