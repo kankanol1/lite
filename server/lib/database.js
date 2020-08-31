@@ -5,7 +5,7 @@ var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'Boys0712',
-    database: 'coco'
+    database: 'www.comecode.net'
 });
 
 //防止注入：'SELECT * FROM user WHERE ?', WHERE
