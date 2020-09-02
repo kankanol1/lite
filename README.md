@@ -81,4 +81,5 @@ lite                            # scratch-cn.lite 目录
 - 欢迎使用 Scratch-cn.Lite，如您喜欢及对您有帮助，请给点个星，支持赞助一下，为后续版本加点油油！！！
 - 技术交流QQ群：115224892
 - [功能参考：www.comecode.net](https://www.comecode.net)
+- [重要：相关技术文档专栏：https://blog.csdn.net/bailee](https://blog.csdn.net/bailee)
 - 版权遵从MIT开源协议，学习交流请入群。如需商用，请联系版权所有者！
