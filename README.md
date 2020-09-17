@@ -38,7 +38,6 @@
 4. 在源代码目录下，直接运行：npm run start
 - 开源版本中，已包含了Scratch所需的全部资源，无需依赖其他平台
 - 开源版本中，已包含了所需的node_modules包
-- 如万一发现有依赖包不全，请执行：npm install XXX（XXX为包名）
 
 ### 目录说明：
 
