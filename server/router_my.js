@@ -28,9 +28,10 @@ router.get('/', function (req, res) {
 //作品
 router.get('/project', function (req, res) {
     var SQL = `SELECT `+
-        `(SELECT count(id) FROM scratch WHERE authorid=${req.session.userid} AND state=0) AS state0_count,`+
-        `(SELECT count(id) FROM scratch WHERE authorid=${req.session.userid} AND state=1) AS state1_count,`+
-        `(SELECT count(id) FROM scratch WHERE authorid=${req.session.userid} AND state=2) AS state2_count `;
+        ` count(case when state=0 then 1 end) AS state0_count, `+
+        ` count(case when state=1 then 1 end) AS state1_count, `+
+        ` count(case when state=2 then 1 end) AS state2_count `+
+        ` FROM scratch WHERE authorid=${req.session.userid}`;
     
     DB.query(SQL, function(err, data){
         if (err){
@@ -51,7 +52,7 @@ router.post('/getProjects', function (req, res) {
     var limit = parseInt(req.body.limit);   //每页显示的作品数
     var state = parseInt(req.body.state);   //每页显示的作品状态
 
-    var SQL = `SELECT id, title,view_count FROM scratch WHERE state=${state} ORDER BY view_count DESC LIMIT ${(curr-1)*limit}, ${limit}`;
+    var SQL = `SELECT id, title,view_count FROM scratch WHERE authorid=${req.session.userid} AND state=${state} ORDER BY view_count DESC LIMIT ${(curr-1)*limit}, ${limit}`;
     DB.query(SQL, function (err, data) {
         if (err) {
             res.status(200).send([]);
