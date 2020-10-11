@@ -33,7 +33,8 @@
 2. 在MySQL中，新建一个数据库，如：scratch.lite，并导入数据库comecode.opensrc.sql
 3. 在/lite/server/lib/database.js文件中，配置MySQL连接参数：MySQL用户名、登录密码、第2步中新建的数据库名
 - MySQL8.0的连接鉴权方式会与以前版本不同，如果发生连接鉴权被拒的问题，请修改MySQL的鉴权方式，可以改以前版本的鉴权方式。
-- 这方面的技术文档：http://www.cainiaoxueyuan.com/sjk/6124.html
+- 这方面的技术文档1：http://www.cainiaoxueyuan.com/sjk/6124.html
+- 这方面的技术文档2：https://jingyan.baidu.com/article/4d58d541689c089dd5e9c062.html
 
 4. 在源代码目录下，直接运行：npm run start
 - 开源版本中，已包含了Scratch所需的全部资源，无需依赖其他平台
