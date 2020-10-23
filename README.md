@@ -20,9 +20,10 @@
 4. 轻松支撑百万量级用户。
 
 ### 平台界面截图：
-![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/index.png)
-![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/login.png)
-![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/login_index.png)
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/login.png)
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/login_index.png)
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/admin.png)
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/scratch.png)
 
 ### 开发环境搭建所需要工具（以Windows为例）：
 - git：用于下载源代码（源代码也可直接下载:https://gitee.com/scratch-cn/lite/repository/archive/master.zip）
