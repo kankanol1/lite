@@ -22,6 +22,8 @@
 ![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/admin.png)
 4. Scratch编程界面:
 ![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/scratch.png)
+5. Scratch分享展示界面:
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/scratch_play.png)
 
 ### 平台构架技术说明：
 1. 前端：Layui 框架；
