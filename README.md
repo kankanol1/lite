@@ -17,7 +17,7 @@
 1. 注册登录界面:
 ![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/login.png)
 2. 登录后的首页界面:
-![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/login_index.png)
+![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/index.png)
 3. 后台管理界面:
 ![Image text](https://gitee.com/scratch-cn/lite/raw/master/build/img/admin.png)
 4. Scratch编程界面:
