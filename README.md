@@ -19,6 +19,11 @@
 3. 框架、结构简单清晰，整个版本极易上手；
 4. 轻松支撑百万量级用户。
 
+### 平台界面截图：
+![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/index.png)
+![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/login.png)
+![Image text](https://gitee.com/scratch-cn/lite/tree/master/build/img/login_index.png)
+
 ### 开发环境搭建所需要工具（以Windows为例）：
 - git：用于下载源代码（源代码也可直接下载:https://gitee.com/scratch-cn/lite/repository/archive/master.zip）
 - NodeJS：平台运行的服务器（下载地址：http://nodejs.cn/download/）
