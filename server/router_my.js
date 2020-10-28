@@ -62,6 +62,18 @@ router.post('/getProjects', function (req, res) {
     });
 });
 
+//分享Scratch项目
+router.post('/scratch/share', function (req, res) {
+    var SQL = `UPDATE scratch SET state=1 WHERE id=${ req.body['id']} AND authorid=${req.session.userid} LIMIT 1`;
+    DB.query(SQL, function (err, d) {
+        if (err) {
+            res.status(200).send(I.msg_fail);
+            return;
+        }
+
+        res.status(200).send( { 'status': 'success', 'msg':'分享成功' });
+    });
+});
 //删除Scratch项目
 router.post('/scratch/del', function (req, res) {
     var DEL = `DELETE FROM scratch WHERE id=${ req.body['id']} AND authorid=${req.session.userid} LIMIT 1`;

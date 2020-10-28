@@ -171,7 +171,28 @@ router.get('/works/scratch', function (req, res) {
 });
 //作品管理：Scratch数据
 router.get('/works/scratch/data', function(req, res) {
-    var SQL = `SELECT count(id) AS c FROM scratch`;
+    WHERE='';
+    NICKNAME = '';//根据昵称查找
+    if (req.query.w == 'search_state0'){
+        WHERE = ` WHERE scratch.state=0 `;
+    } else if (req.query.w == 'search_state1'){
+        WHERE = ` WHERE scratch.state>0 `;
+    } else if (req.query.w == 'search_state2'){
+        WHERE = ` WHERE scratch.state=2 `;
+    } else if (req.query.w == 'search_recommented1'){
+        WHERE = ` WHERE scratch.recommented=1 `;
+    } else if (req.query.w == 'search_workname'){
+        WHERE = ` WHERE scratch.title LIKE '%${req.query.v}%' `;
+    } else if (req.query.w == 'search_nickname'){
+        NICKNAME = ` AND user.nickname LIKE '%${req.query.v}%' `;
+    }
+
+    if (NICKNAME==''){
+        var SQL = `SELECT count(id) AS c FROM scratch ${WHERE}`;
+    } else {
+        var SQL = `SELECT count(scratch.id) AS c FROM scratch `+
+        ` INNER JOIN user ON (user.id=scratch.authorid ${NICKNAME}) `;
+    }
     DB.query(SQL, function (err, count){
         if (err || count[0]['c']==0) {
             res.status(200).send({'count':0,'data':[]});
@@ -180,9 +201,9 @@ router.get('/works/scratch/data', function(req, res) {
         //获取当前数据集合
         var page = parseInt(req.query['page']);
         var limit = parseInt(req.query['limit']);
-        SQL = `SELECT scratch.id, scratch.state, scratch.title, scratch.time, user.username, user.nickname FROM scratch `
-             +` LEFT JOIN user ON user.id=scratch.authorid `
-             +` ORDER BY scratch.time DESC LIMIT ${(page-1)*limit},${limit}`;
+        SQL = `SELECT scratch.id, scratch.state, scratch.recommented, scratch.title, scratch.time, user.username, user.nickname FROM scratch `
+             +` INNER JOIN user ON (user.id=scratch.authorid ${NICKNAME}) `
+             +` ${WHERE} ORDER BY scratch.time DESC LIMIT ${(page-1)*limit},${limit}`;
 
         DB.query(SQL, function (err, data) {
             if (err) {
@@ -192,6 +213,55 @@ router.get('/works/scratch/data', function(req, res) {
             }
         });
     });
+});
+//作品管理：设置作品的标题
+router.post('/works/scratch/changeTitle',function(req,res){
+    var UPDATE = `UPDATE scratch SET title=? WHERE id=${req.body.id} LIMIT 1`;
+    var SET = [`${req.body.t}`]
+    DB.qww(UPDATE, SET, function(err,d){
+        if(err){
+            res.status(200).send({"status":"failed","msg":"再试一次"})
+        }
+        else {
+            res.status(200).send({"status":"success",'msg':'操作成功'})        
+        }
+    })
+});
+//作品管理：设置作品的发布状态
+router.post('/works/scratch/setState',function(req,res){
+    if (req.body.s == undefined || (req.body.s < 0 || 2 < req.body.s)) {
+        s = 0;//未知时，都当作取消推荐处理
+    }else{
+        s = req.body.s;
+    }
+
+    var UPDATE = `UPDATE scratch SET state=${s} WHERE id=${req.body.id} LIMIT 1`;
+    DB.query(UPDATE, function(err,d){
+        if(err){
+            res.status(200).send({"status":"failed","msg":"再试一次"})
+        }
+        else {
+            res.status(200).send({"status":"success",'msg':'操作成功'})        
+        }
+    })
+});
+//作品管理：设置作品的推荐状态
+router.post('/works/scratch/setRecommented',function(req,res){
+    if (req.body.r == undefined || (req.body.r !=0 && req.body.r !=1)) {
+        r = 0;//未知时，都当作取消推荐处理
+    }else{
+        r = req.body.r;
+    }
+
+    var UPDATE = `UPDATE scratch SET recommented=${r} WHERE id=${req.body.id} LIMIT 1`;
+    DB.query(UPDATE, function(err,d){
+        if(err){
+            res.status(200).send({"status":"failed","msg":"再试一次"})
+        }
+        else {
+            res.status(200).send({"status":"success",'msg':'操作成功'})        
+        }
+    })
 });
 
 

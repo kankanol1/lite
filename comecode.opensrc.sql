@@ -43,7 +43,7 @@ CREATE TABLE `scratch` (
   `view_count` int unsigned DEFAULT '0' COMMENT '被浏览次数',
   `like_count` int DEFAULT '0' COMMENT '点赞次数',
   `favo_count` int DEFAULT '0' COMMENT '被收藏次数',
-  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建或被修改的时间',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建或被修改的时间',
   `title` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'Scratch新项目' COMMENT '标题',
   `description` varchar(255) DEFAULT NULL COMMENT '描述',
   `src` mediumtext COMMENT '源代码',

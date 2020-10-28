@@ -67,10 +67,10 @@ function loadPage(count, state){
 										<div style="flex: 4;">${d[i].title}</div>
 										<div class="project-top-right" onclick="delProject(this,${d[i].id})">删除</div>
 									</div>
-									<a href="/scratch/play?id=${d[i].id}" target="_blank"><img class="img-slt1" src="/scratch_slt/${d[i].id}"></a>
+									<a href="/scratch/edit?id=${d[i].id}" target="_blank"><img class="img-slt1" src="/scratch_slt/${d[i].id}"></a>
 									<div class="txt-project-title2">
-										<div class="project-bottom-left">分享</div>
-										<div class="project-bottom-right">修改</div>
+										<div class="project-bottom-left" onclick="shareScratchProject(${d[i].id})">分享</div>
+										<a class="project-bottom-right" href="/scratch/edit#${d[i].id}" target="_blank">修改</a>
 									</div>
 								</div>
 							`);
@@ -129,6 +129,18 @@ function loadPage(count, state){
 	//默认执行一次
 	project_state0();
 
+	//分享作品
+	function shareScratchProject(id){
+		layer.confirm('分享此作品？',{title:'重要提示',shadeClose:true}, function (index) {
+            AjaxFn('/my/scratch/share', {'id': id}, function (res){
+                layer.msg(res['msg']);
+                if ('success' == res['status']){
+					layer.close(index);
+					window.location.reload();
+                }
+            })
+        });
+	};
 	//删除作品
 	function delProject(that,id){
 		layer.confirm('删除此作品？',{title:'重要提示',shadeClose:true}, function (index) {
