@@ -73,7 +73,7 @@ app.all('*', function (req, res, next) {
 //首页
 app.get('/', function (req, res) {
     //获取已分享的作品总数
-    var SQL = `SELECT count(id) AS project_count FROM scratch WHERE state>0 AND recommented>0`; 
+    var SQL = `SELECT count(id) AS project_count FROM scratch WHERE state>0`; 
     DB.query(SQL, function(err, data){
         if (err){
             res.locals.project_count = 0;
@@ -90,7 +90,7 @@ app.post('/index/getProjects', function (req, res) {
     var curr = parseInt(req.body.curr);     //当前要显示的页码
     var limit = parseInt(req.body.limit);   //每页显示的作品数
     
-    var SQL = `SELECT id, title, state FROM scratch WHERE state>0 AND recommented>0 ORDER BY view_count DESC LIMIT ${(curr-1)*limit}, ${limit}`;
+    var SQL = `SELECT id, title, state FROM scratch WHERE state>0 ORDER BY view_count DESC LIMIT ${(curr-1)*limit}, ${limit}`;
     DB.query(SQL, function (err, data) {
         if (err) {
             res.status(200).send([]);
@@ -107,7 +107,7 @@ app.post('/index/seachProjects', function (req, res) {
         return;
     }
  
-    var SQL = `SELECT id, title FROM scratch WHERE state>0 AND recommented>0 AND (title LIKE ?) LIMIT 12`;
+    var SQL = `SELECT id, title FROM scratch WHERE state>0 AND (title LIKE ?) LIMIT 12`;
     var WHERE = [`%${req.body.txt}%`];
     DB.qww(SQL, WHERE, function (err, data) {
         if (err) {
