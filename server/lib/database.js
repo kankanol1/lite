@@ -2,9 +2,9 @@
 // 连接MySQL
 var mysql = require('mysql');
 var pool = mysql.createPool({
-    host: '106.52.105.214',
+    host: '',
     user: 'root',
-    password: 'dian571745',
+    password: '',
     database: 'psyduck'
 });
 
