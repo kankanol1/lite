@@ -26,7 +26,7 @@ app.use(compress());
 app.set('views', __dirname + '/build');
 app.set('view engine', 'ejs');
 
-//数据库
+//数据库https://www.jianshu.com/p/c94f0c386def
 var DB = require("./server/lib/database.js");
 
 //设置静态资源路径 

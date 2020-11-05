@@ -8,10 +8,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>登录/注册-来编程</title>
+  <title>登录/注册-可达鸭</title>
   <link rel="shortcut icon" href="/img/icon.ico">
   <meta name="description" content="Scratch、Python、C++教学，竞赛、等级考试。">
-  <meta name="keyword" content="Scratch,Python,C++,少儿编程,K12,来编程,中小学生创客,STEAM,小学信息技术,机器人编程,图形化编程">
+  <meta name="keyword" content="Scratch,Python,C++,少儿编程,K12,可达鸭,中小学生创客,STEAM,小学信息技术,机器人编程,图形化编程">
 
   <link rel="stylesheet" href="/layui/css/layui.css">
 	<link rel="stylesheet" href="/css/main.css">
@@ -21,7 +21,22 @@
   <div class="layui-container" style="margin-top: 100px">
     <div class="layui-row">
       <div class="layui-col-md6">
-        <img src="/img/web/login_left.jpg" width="100%" style="border-radius: 5px;">
+<!--        <img src="/img/web/login_left.jpg" width="100%" style="border-radius: 5px;">-->
+        <div class="layui-carousel" id="duck" style="height: 320px!important;">
+          <div carousel-item>
+            <div>
+              <img src="/img/web/l2.jpg" width="100%" height="100%" style="border-radius: 5px;">
+            </div>
+            <div>
+              <img src="/img/web/l4.jpg" width="100%"  height="100%"  style="border-radius: 5px;">
+            </div>
+            <div>
+              <img src="/img/web/l6.jpg" width="100%"  height="100%"  style="border-radius: 5px;">
+            </div>
+
+          </div>
+        </div>
+
       </div>
       <style>
         .title:after {
@@ -34,9 +49,9 @@
         }
       </style>
         
-      <div class="layui-col-md6" style="padding: 30px 0 0 30px;">
+      <div class="layui-col-md6" style="padding:0 0 0 30px;">
         <div id='login-page'>
-          <h2 class="title">来编程 登录</h2>
+          <h2 class="title">可达鸭 登录</h2>
           
           <div class="reply-form" style="height: max-content;">
             <form>
@@ -54,11 +69,11 @@
         </div>
 
         <div id='reg-page' style="display: none;">
-          <h2 class="title">来编程 注册</h2>
+          <h2 class="title">可达鸭 注册</h2>
           <div class="reply-form" style="height: max-content;">
             <form>
               <input style="margin: 20px 0; width: 280px;" class="layui-input" id='reg_username' type="text" maxlength="16" placeholder="账号：数字+字母">
-              <input style="margin: 20px 0; width: 280px;" class="layui-input" id='reg_password' type="text" maxlength="16" placeholder="密码：数字+写字母+!@#$%^&*">
+              <input style="margin: 20px 0; width: 280px;" class="layui-input" id='reg_password' type="text" maxlength="16" placeholder="密码：数字+字母+!@#$%^&*">
               <div style="height: 50px;"></div>
 
               <button type="button" onclick="register()" class="layui-btn layui-btn-danger" style="width: 120px; margin-right: 20px;">注 册</button>
@@ -70,7 +85,7 @@
         </div>
 
         <div id='getPW-page' style="display: none;">
-          <h2 class="title">来编程 找回密码</h2>
+          <h2 class="title">可达鸭 找回密码</h2>
           <div class="reply-form" style="height: max-content;">
             <form>
               <input  style="margin: 20px 0; width: 280px;" class="layui-input" id='getPW_username' type="text" maxlength="11" placeholder="手机号">
@@ -102,4 +117,16 @@
 
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>
+<script>
+  layui.use('carousel', function(){
+    var carousel = layui.carousel;
+    //建造实例
+    carousel.render({
+      elem: '#duck'
+      ,width: '100%' //设置容器宽度
+      ,arrow: 'always' //始终显示箭头
+      //,anim: 'updown' //切换动画方式
+    });
+  });
+</script>
 </html>

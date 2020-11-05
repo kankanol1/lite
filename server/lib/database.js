@@ -2,10 +2,10 @@
 // 连接MySQL
 var mysql = require('mysql');
 var pool = mysql.createPool({
-    host: 'localhost',
+    host: '106.52.105.214',
     user: 'root',
-    password: 'Boys0712',
-    database: 'comecode.opensrc'
+    password: 'dian571745',
+    database: 'psyduck'
 });
 
 //防止注入：'SELECT * FROM user WHERE ?', WHERE
