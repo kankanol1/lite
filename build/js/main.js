@@ -96,7 +96,7 @@ function openWindow_PW(){
 		,content:
 		`<div style="margin:12px">
 			<input class="layui-input" id='old_password' type="text" maxlength="16" placeholder="原密码" style="margin-top:18px;">
-			<input class="layui-input" id='new_password' type="text" maxlength="16" placeholder="新密码：数字+写字母+!@#$%^&*" style="margin:28px 0;">
+			<input class="layui-input" id='new_password' type="text" maxlength="16" placeholder="新密码：数字+字母+!@#$%^&*" style="margin:28px 0;">
 			<div class="layui-btn" onclick="updatePassword()" style="width:180px; line-height:48px; height:48px; margin: 18px 0 20px 58px">修改密码</div>
 		</div>`
 	});

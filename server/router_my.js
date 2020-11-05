@@ -188,7 +188,7 @@ router.post('/set/userinfo', function (req, res) {
             res.cookie('nickname', req.body['nickname'], { 'maxAge': 604800000, 'signed': true });
         }
 
-        res.status(200).send( {'status': '个人信息修成成功'});
+        res.status(200).send( {'status': '个人信息修改成功'});
       });
 });
 //修改密码：动作

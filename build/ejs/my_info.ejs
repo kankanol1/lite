@@ -21,7 +21,7 @@
 		<div id="head_username"><%= nickname %></div>
 
 		<div id="head_menu">
-			<a href="javascript:;" onclick="sooncoming()" style="margin: 0 12px;">我的主页</a>
+<!--			<a href="javascript:;" onclick="sooncoming()" style="margin: 0 12px;">我的主页</a>-->
 			<a href="/my/info" style="margin: 0 12px;">个人信息</a>
 			<a href="javascript:;" onclick="openWindow_PW()" style="margin: 0 12px;">修改密码</a>
 			<a href='/user/logout' style="margin: 0 12px;">安全退出</a>
@@ -33,17 +33,17 @@
 		<div style="background-color: #FFF; width: 960px;border-radius: 10px;">
 			<img src="/user/<%= userid %>.png" style="height: 100px; width: 100px;margin:20px;border-radius: 5px;">
 			<div>
-				<button type="button" class="layui-btn avatarUpload" lay-data="{exts:'png|jpg', size:100}">更换头像</button>
+<!--				<button type="button" class="layui-btn avatarUpload" lay-data="{exts:'png|jpg', size:100}">更换头像</button>-->
 			</div>
-			<div style="font-size: smaller;color:#999">
+		<!--	<div style="font-size: smaller;color:#999">
 				(头像文件格式：png、jpg 最佳像素：200x200；最大：100KB)
-			</div>
+			</div>-->
 
 			<div class="content-item">
 				账号：
 				<input id="old_username" class="layui-input" style="width: 240px;" disabled type="text" value="<%= username %>"/>
-				<div class="layui-btn" style="margin:0 2px 0 20px;" onclick="openWindow_UN()">升级账号</div>
-				<div style="font-size: smaller;">(升级为手机号，忘记密码时，才能找回密码)</div>
+				<!--<div class="layui-btn" style="margin:0 2px 0 20px;" onclick="openWindow_UN()">升级账号</div>
+				<div style="font-size: smaller;">(升级为手机号，忘记密码时，才能找回密码)</div>-->
 			</div>
 
 
