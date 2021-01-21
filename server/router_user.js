@@ -19,6 +19,8 @@ router.get('/login', function (req, res) {
 });
 //登录
 router.post('/login', function (req, res) {
+
+    console.log(req.body);
     if (!req.body.pw|| !I.userpwTest(req.body.pw) || !req.body.un || !I.usernameTest(req.body.un)){
         res.status(200).send( { 'status': '账号或密码错误' });
         return;

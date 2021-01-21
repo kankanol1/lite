@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 
-//设置环境变量 
+//设置环境变量
 var session = require('express-session');
 app.use(session({ 'secret': 'CoCo-secret', 'resave': false, 'name': 'CoCoName', 'saveUninitialized': true,'cookie': {'secure': false}}));
 
@@ -29,12 +29,12 @@ app.set('view engine', 'ejs');
 //数据库https://www.jianshu.com/p/c94f0c386def
 var DB = require("./server/lib/database.js");
 
-//设置静态资源路径 
+//设置静态资源路径
 app.use('/', express.static('build'));
 app.use('/', express.static('data'));//用户数据内容
 
 //启动http(80端口)==================================
-http.createServer(app).listen(80, '0.0.0.0', function () { console.log('HTTP APP started on port 80'); });
+http.createServer(app).listen(8081, 'localhost', function () { console.log('HTTP APP started on port 80'); });
 
 //平台总入口
 app.all('*', function (req, res, next) {
@@ -73,7 +73,7 @@ app.all('*', function (req, res, next) {
 //首页
 app.get('/', function (req, res) {
     //获取已分享的作品总数
-    var SQL = `SELECT count(id) AS project_count FROM scratch WHERE state>0`; 
+    var SQL = `SELECT count(id) AS project_count FROM scratch WHERE state>0`;
     DB.query(SQL, function(err, data){
         if (err){
             res.locals.project_count = 0;
@@ -89,7 +89,7 @@ app.get('/', function (req, res) {
 app.post('/index/getProjects', function (req, res) {
     var curr = parseInt(req.body.curr);     //当前要显示的页码
     var limit = parseInt(req.body.limit);   //每页显示的作品数
-    
+
     var SQL = `SELECT id, title, state FROM scratch WHERE state>0 ORDER BY view_count DESC LIMIT ${(curr-1)*limit}, ${limit}`;
     DB.query(SQL, function (err, data) {
         if (err) {
@@ -106,7 +106,7 @@ app.post('/index/seachProjects', function (req, res) {
         res.status(200).send([]);
         return;
     }
- 
+
     var SQL = `SELECT id, title FROM scratch WHERE state>0 AND (title LIKE ?) LIMIT 12`;
     var WHERE = [`%${req.body.txt}%`];
     DB.qww(SQL, WHERE, function (err, data) {

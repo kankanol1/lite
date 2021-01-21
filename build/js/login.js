@@ -116,7 +116,7 @@ function login() {
     }
 
     AjaxFn('/user/login', { 'un': un, 'pw': pw },function (res) {
-        if ('OK' == res.status) {
+        if ('OK' === res.status) {
             window.location.reload();
         }else{
             layer.msg(res.status);

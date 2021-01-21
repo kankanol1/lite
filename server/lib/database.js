@@ -2,7 +2,8 @@
 // 连接MySQL
 var mysql = require('mysql');
 var pool = mysql.createPool({
-    host: '0.0.0.0',
+    host: '106.52.105.214',
+    port: '3306',
     user: 'root',
     password: 'rootroot',
     database: 'psyduck'
@@ -12,7 +13,7 @@ var pool = mysql.createPool({
 exports.qww = function query_with_w(SQL, W, callback) {
     pool.getConnection(function (err, connection) {
         if (err) return callback(err,'');
-        
+
         // Use the connection
         connection.query(SQL, W, function (err, rows) {
             callback(err, rows);
@@ -25,7 +26,7 @@ exports.qww = function query_with_w(SQL, W, callback) {
 exports.query = function query(SQL, callback) {
     pool.getConnection(function (err, connection) {
         if (err) return callback(err,'');
-        
+
         // Use the connection
         connection.query(SQL, function (err, rows) {
             callback(err, rows);
